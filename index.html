@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+    <title>Dioxus Video Call</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+  <link rel="modulepreload" href="/dioxus_camera-7b63f6809ffaea9f.js" crossorigin="anonymous" integrity="sha384-G/BrGANgn1LRAd92hc67yircHtHqAy6geGGNMQwX9PfxOkhpJq+GGR1SkhbYzevu"><link rel="modulepreload" href="/snippets/dioxus-interpreter-js-7e2aed97ebee2c55/src/js/eval.js" crossorigin="anonymous" integrity="sha384-ks/r+y1kY4du0z2hvNElbl2lGiYIMKyoewBMNJVdOl1CNoiOC+EC5U+GTT5bdpZ9"><link rel="modulepreload" href="/snippets/dioxus-interpreter-js-7e2aed97ebee2c55/inline0.js" crossorigin="anonymous" integrity="sha384-H92gvGzEyw8Ru9jGmX32dZn4sVTWMlvL4ZoqL3bZ5TtB19Z/ikzUP1iQcC05v9Wf"><link rel="modulepreload" href="/snippets/dioxus-interpreter-js-7e2aed97ebee2c55/src/js/common.js" crossorigin="anonymous" integrity="sha384-lNXbLTw7Z18z5HtM0HV3R7/8J+II5Ei18I53QeIZolR+l1nGEBr27UjMtT/DJpiC"><link rel="modulepreload" href="/snippets/dioxus-web-10186f9fcc0b4418/inline1.js" crossorigin="anonymous" integrity="sha384-2v8X0XAeO26J0vmoLhIbIeAjVzFnrY9iLhlYJcksTMp7Ip2tbDcoX4vD/hCan7M7"><link rel="modulepreload" href="/snippets/dioxus-web-10186f9fcc0b4418/inline0.js" crossorigin="anonymous" integrity="sha384-xqSmg18C2FmchYWi9fb4cSqOW4ZNNo4b7NWZK1eW+fOqg4no+2F+zETwKUf1PJy3"><link rel="preload" href="/dioxus_camera-7b63f6809ffaea9f_bg.wasm" crossorigin="anonymous" integrity="sha384-SLiMz0TTUIZH8/IPCH3NvASqJ7iXin/jImEs3sPWXacaebRKIQwj444tVdySfLyW" as="fetch" type="application/wasm"></head>
+  <body>
+    <!-- Dioxus akan merender elemennya di div id="main" -->
+    <div id="main"></div>
+  
+<script type="module">
+import init, * as bindings from '/dioxus_camera-7b63f6809ffaea9f.js';
+const wasm = await init({ module_or_path: '/dioxus_camera-7b63f6809ffaea9f_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
